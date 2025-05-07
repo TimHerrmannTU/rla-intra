@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Saans';
+    src: url('./webfonts/Saans-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Saans';
+    src: url('./webfonts/Saans-Medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+body {
+    font-family: 'Saans', arial, sans-serif;
+    font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.05rem;
+    line-height: 2;
+    word-wrap: normal;
+}
+h1, h2 {
+    font-weight: 300;
+}
+h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+h1 {font-size: 3.2rem;}
+h2 {font-size: 2.6rem;}
+h3 {font-size: 2rem;}
+h4 {font-size: 1.6rem;}
+h5 {font-size: 1.2rem;}
+h6 {font-size: 1rem;}
+
+*:not(h1, h2, h3, h4, h5, h6) {
+    font-size: 1rem;
+}
+
+.fs-s {font-size: 0.85rem;}
+.fs-m {font-size: 1rem;}
+.fs-l {font-size: 1.5rem;}

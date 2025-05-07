@@ -1,0 +1,165 @@
+/*---------------------------------------------------*/
+/* Site Menu */
+/*---------------------------------------------------*/
+#main-menu {
+  display: none;
+  background: var(--secondBg);
+  background: #2ca81b80;
+  background: #fff;
+  width: 100%;
+  padding: 1vw;
+  border-top: 1px solid;
+  transition: all 0.5s;
+}
+
+#site-menu section,
+#site-menu ul {
+  margin: 0;
+}
+
+#site-menu a {
+  color: var(--mainColor);
+}
+
+.main-menu-inside {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1vw;
+}
+
+#site-menu-inside {
+  margin-top: 15%;
+  margin-bottom: 2rem;
+}
+
+#site-menu-bottom {
+  font-size: 1.2em;
+  margin-top: auto;
+}
+
+/* Searchbar */
+input#search {
+  display: none;
+}
+
+label.search:hover {
+  color: var(--secondColor);
+  cursor: pointer;
+}
+
+#searchform {
+  display: none;
+}
+
+#searchform,
+#searchform * {
+  background-color: transparent;
+}
+
+#searchform input {
+  width: 100%;
+}
+
+#searchform input:focus {
+  outline: none;
+}
+
+#search:checked~#searchform {
+  display: block;
+}
+
+#search:checked~#site-menu-inside,
+#search:checked~#site-menu-bottom {
+  display: none;
+}
+
+/* Hamburger Navigation */
+
+input#hamburg {
+  display: none;
+}
+
+label.hamburg {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  z-index: 1005;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  height: 3px;
+  width: 24px;
+  background: #000;
+  display: block;
+  transition: 0s;
+  transform-origin: center;
+}
+
+.line:nth-child(1) {
+  top: 4px;
+}
+
+.line:nth-child(2) {
+  top: 12px;
+}
+
+.line:nth-child(3) {
+  top: 20px;
+}
+
+#hamburg:checked+.hamburg .line:nth-child(1) {
+  transform: translateY(4px) rotate(-45deg);
+}
+
+#hamburg:checked+.hamburg .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburg:checked+.hamburg .line:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+#hamburg:checked+.hamburg+#main-menu,
+#hamburg:checked~* #main-menu {
+  display: block;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*	Suche
+/* -------------------------------------------------------------------------- */
+
+.searchform {
+  --nav-color: rgb(235, 235, 235);
+  --nav-color: #fff;
+  background-color: var(--nav-color);
+  overflow: hidden;
+
+}
+
+header .searchform {
+  border-bottom: 1px solid;
+}
+
+.controls .searchform {
+  border-bottom: 1px solid;
+}
+
+.searchform form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+input {
+  font-family: 'Graphik Web', arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
