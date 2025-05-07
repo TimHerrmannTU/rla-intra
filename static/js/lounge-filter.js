@@ -1,4 +1,4 @@
-$(function () {
+jQuery(document).ready(function($) {
 	// (type1 | ... | typeN) & ... & (ratio1 | ... | ratioN)
 	// "colors": {"multi":true,  "vals":[]},
 	var filters = {
@@ -27,10 +27,21 @@ $(function () {
 	}
 	const types_with_ratios = ["Lageplan", "Detail", "Schnitt"]
 
+	$("#gallery .item").each(function () {
+		var $img = $(this).find("img")
+		$img.attr("src", $(this).data("thumb"))
+		if ($(this).data("thumb") == $(this).attr("href")) {
+			console.log("No Thumbnail present: ", $(this).attr("f-project"), $(this).data("thumb"))
+		}
+	})
+
 	var filterContainer = $("#gallery")
+	if (filterContainer.length > 0) {
+		console.log("Target container found!")
+	}
 	filterContainer.ready(function () {
 		// Initialize Filterizr
-		console.log("Initializing Filterizr")
+		console.log('Initializing Filterizr', $(filterContainer).length, $(filterContainer).find("a.item").length);
 		filterContainer.filterizr({
 			gridItemsSelector: "a.item",
 			layout: 'packed',
@@ -40,13 +51,6 @@ $(function () {
 
 		// load images lazy
 		window.dispatchEvent(new Event('resize')); // weird work around to keep the layout working
-		$("#gallery .item").each(function () {
-			var $img = $(this).find("img")
-			$img.attr("src", $(this).data("thumb"))
-			if ($(this).data("thumb") == $(this).attr("href")) {
-				console.log("No Thumbnail present: ", $(this).attr("f-project"), $(this).data("thumb"))
-			}
-		})
 		$("#control-panel").show(); // only show the lounge after successfull init
 		$("#lounge").show(); // only show the lounge after successfull init
 		filterContainer.filterizr("shuffle");

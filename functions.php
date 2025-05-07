@@ -23,24 +23,24 @@ function rlaintra_scripts() {
 	global $wp_styles;
 
 	// Loads main stylesheet.
-	wp_enqueue_style( 'rlaintra-style', get_stylesheet_uri(), array(), null );
-	wp_enqueue_style( 'style-nav', get_template_directory_uri() . '/static/css/style-nav.css', array(), null );
-	wp_enqueue_style( 'rlaintra-style-weiss-saans', get_template_directory_uri() . '/static/css/style_weiss_saans.css', array(), null );
-	wp_enqueue_style( 'lounge', get_template_directory_uri() . '/static/css/photoswipe.css', array(), null );
-	wp_enqueue_style( 'rla-fontello24', get_template_directory_uri() . '/static/css/style-fontello24.css', array(), null );
+	wp_enqueue_style( 'rlaintra-style', get_stylesheet_uri(), [], null );
+	wp_enqueue_style( 'style-nav', get_template_directory_uri() . '/static/css/style-nav.css', [], null );
+	wp_enqueue_style( 'rlaintra-style-weiss-saans', get_template_directory_uri() . '/static/css/style_weiss_saans.css', [], null );
+	wp_enqueue_style( 'lounge', get_template_directory_uri() . '/static/css/photoswipe.css', [], null );
+	wp_enqueue_style( 'rla-fontello24', get_template_directory_uri() . '/static/css/style-fontello24.css', [], null );
 	
 	// Loads jQuery
-	wp_enqueue_script( 'jquery-3.7.1.min', get_template_directory_uri() . '/static/js/jquery-3.7.1.min.js', array(), null );
-	wp_enqueue_script( 'jquery.filterizr.min.js', get_template_directory_uri() . '/static/js/jquery.filterizr.min.js', array("jquery"), null );
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'jquery.filterizr.min.js', get_template_directory_uri() . '/static/js/jquery.filterizr.min.js', ["jquery"], true );
 
 	// Icons
-	wp_enqueue_script( 'jquery.iconify.js', get_template_directory_uri() . '/static/js/iconify.js', array("jquery"), null );
+	wp_enqueue_script( 'jquery.iconify.js', get_template_directory_uri() . '/static/js/iconify.js', ["jquery"], true );
 	
 	// Loads Custom JavaScript functionality
-	wp_enqueue_script( 'functions-js', get_template_directory_uri() . '/static/js/functions.js', array(), null );
+	wp_enqueue_script( 'functions.js', get_template_directory_uri() . '/static/js/functions.js', ["jquery"], true );
 	
 	//smooth-scroll (ERROR)
-	//wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/scripts/smooth-scroll.polyfills.min.js', array(), null );
+	//wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/scripts/smooth-scroll.polyfills.min.js', [], null );
 }
 add_action( 'wp_enqueue_scripts', 'rlaintra_scripts' );
 

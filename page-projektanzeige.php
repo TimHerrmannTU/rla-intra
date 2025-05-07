@@ -446,7 +446,7 @@ if ($zeitraum) {
 </div>
 
 <script>
-$(function() {
+jQuery(document).ready(function($) {
 	// breadcrumb fix
 	var prev_page = $("#breadcrumb .current-page")
 	$(prev_page).replaceWith($("<a href='<?= get_bloginfo('url')."/projekt-archiv" ?>'>"+$(prev_page).text()+"</a>"));

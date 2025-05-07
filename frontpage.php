@@ -2,8 +2,9 @@
 
 <?php get_header(); ?>
 <script>
-$(function() {
+jQuery(document).ready(function($) {
 	console.log("Creating page")
+	
 	$("#page-creation > *").each(function() {
 		$(".placeholder[ph-target='"+$(this).attr("id")+"']").replaceWith($(this))
 	})
@@ -15,7 +16,7 @@ $(function() {
 	})
 })
 // remeber scroll position
-$(function() {
+jQuery(document).ready(function($) {
 	const last_dd = localStorage.getItem("rla-intra-last-dd") 
 	const last_site = localStorage.getItem("rla-intra-history")
 	if (last_dd != null && last_site != "http://webserver/intranet_rla/wp_intra24/") {

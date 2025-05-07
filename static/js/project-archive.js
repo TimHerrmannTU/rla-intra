@@ -1,5 +1,4 @@
-
-$(function() {
+jQuery(document).ready(function($) {
 	$("#header .search-wrapper").hide() // hides nav searchbar to avoid confusion
 	$(".pro-table td[f-index='Fläche in ha'], .pro-table td[f-index='Bausumme gesamt']").each(function() {
 		if ($(this).text().trim() == "") {

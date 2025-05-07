@@ -98,14 +98,14 @@
 	</div>
 </div>
 
-<main id="lounge" class="col gap-1 mt-1 mb-1" style="display: none;">
+<main id="lounge" class="col gap-1 mt-1 mb-1">
 
 	<?php
 	// args
 	$args = array(
 		'numberposts' => -1,
 		'post_type' => 'wettbewerb',
-		'posts_per_page' => 1
+		'posts_per_page' => -1
 	);
 	// query
 	$the_query = new WP_Query($args);
@@ -126,7 +126,7 @@
 							$width = $image['sizes'][$size . '-width'];
 							$height = $image['sizes'][$size . '-height'];
 							$ratio = 200 / $height;
-							$fixed_width = $width * $ratio;
+							$fixed_width = round($width * $ratio);
 							// For filtering:
 							$tags = "";
 							if (get_sub_field("schlagworter-zeichnung")) {
@@ -152,7 +152,7 @@
 								
 								comment="Setup for Filterizr"
 								f-types="<?= get_sub_field("typ") ?>"
-								f-project="<?= the_title() ?>"
+								f-project="<?= esc_attr(get_the_title()) ?>"
 								f-tags="<?= $tags ?>" 
 								f-ratios-Lageplan="<?= get_sub_field("massstab_lageplan") ?>"
 								f-ratios-Detail="<?= get_sub_field("massstab_detail") ?>"
@@ -167,7 +167,7 @@
 								data-title="<?= esc_attr($image['title']); ?>"
 								data-date="<?= $date ?>"
 								data-place="<?= get_field("wb-ergebnis") ?>"
-								data-caption="<?= the_title() ?>"
+								data-caption="<?= esc_attr(get_the_title()) ?>"
 
 								comment="Misc: debugging"
 								data-thumb="<?= $thumb ?>"
@@ -175,7 +175,7 @@
 								data-wb-link="<?= get_permalink() ?>"
 							>
 								<img style="width: <?= $fixed_width ?>px !important;" loading="lazy"/>
-								<div class="image-mask"><?= the_title() ?></div>
+								<div class="image-mask"><?= esc_attr(get_the_title()) ?></div>
 							</a>
 						<?php endif; ?>
 					<?php endwhile; ?>

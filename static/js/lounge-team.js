@@ -1,4 +1,4 @@
-$(function () {
+jQuery(document).ready(function($) {
 	// State managment
 	var super_filter = {
 		"name": "standorte",

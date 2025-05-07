@@ -1,4 +1,4 @@
-$(function() {
+jQuery(document).ready(function($) {
 	// searchbar stuff
 	$("#header .searchform").hide()
 	$("#pro-search").val("")
