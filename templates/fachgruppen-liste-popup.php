@@ -30,7 +30,8 @@ if( $terms ): ?>
 	</ul>
 <?php endif; ?>
 
-<script>	
+<script>
+jQuery(document).ready(function($) {
 	// Ein- und Ausklappen der Fachgruppen
 	function toggle_fachgruppe(theButton) {
 		var theLI = $(theButton).parent();
@@ -48,4 +49,5 @@ if( $terms ): ?>
 			theDiv.addClass('hidden');
 		}
 	}
+})
 </script>

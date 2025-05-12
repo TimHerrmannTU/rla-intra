@@ -53,6 +53,7 @@
 
 </div>
 <script>
+jQuery(document).ready(function($) {
     function slugify(str) {
         str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
         str = str.toLowerCase(); // convert string to lowercase
@@ -75,4 +76,5 @@
 		useless_link.removeAttr("href")
 		useless_link.addClass("disabled")
 	})
+})
 </script>

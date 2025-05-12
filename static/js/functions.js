@@ -18,7 +18,7 @@ function toggle_arrow(frameid) {
 } 
 
 jQuery(document).ready(function($) {
-	function toggle_dropdown(clicked_button, scroll=true) {
+	window.toggle_dropdown = function(clicked_button, scroll=true) {
 		var element = $(clicked_button).parent() // jQuery syntax
 		if (scroll) scroll = !element.hasClass('active')
 		element.toggleClass('active')
@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
 		});
 	})
 	
-	function pop_up(clicked_button) {
+	window.pop_up = function(clicked_button) {
 		var ele = $(clicked_button).closest(".dd-wrapper")
 		ele.find('.dd').toggleClass('hidden')
 		ele.toggleClass('active')
@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
 	})
 	
 	// copies the value of a sibling-input field
-	function copyInput(button) {
+	window.copyInput = function(button) {
 		$parent = $(button).parent()
 		$parent.find("input").show().select()
 		document.execCommand("copy")
