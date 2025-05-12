@@ -27,7 +27,7 @@
 			</div>
 			<div class="row gap-2">
 				<button id="export" class="filter-button bordered">EXPORTIEREN</button>	
-				<button class="filter-button bordered" onclick="$('#export-modal').hide()">ABBRECHEN</button>	
+				<button class="filter-button bordered" onclick="jQuery('#export-modal').hide()">ABBRECHEN</button>	
 			</div>	
 		</div>
 	</div>
@@ -35,7 +35,7 @@
 		<div class="controls gap-2 w-100 mb-2">
 			<h2 class="toggle-me">Firmen</h2>
 			<h2 class="toggle-me" style="display:none">Hersteller</h2>
-			<a class="option-button" onclick="$('#export-modal').show()"><span class="iconify" data-icon="mdi-download"></a>
+			<a class="option-button" onclick="jQuery('#export-modal').show()"><span class="iconify" data-icon="mdi-download"></a>
 			<div id="type-toggle" class="text-toggle">
 				<div class="option left selected" f-val="firma">Firmen</div>
 				<div class="slider"></div>

@@ -45,7 +45,7 @@
                         ?>
                         <button 
                             class="filter-button bordered smooth more"
-                            onclick="$(this).closest('td').find('.hidden').toggleClass('hidden'); $(this).toggle()">
+                            onclick="jQuery(this).closest('td').find('.hidden').toggleClass('hidden'); jQuery(this).toggle()">
                             Weitere +
                         </button><?php
                     }
@@ -58,7 +58,7 @@
                 <td f-name="plz"><?= esc_html(get_field('plz')) ?></td>
                 <td f-name="ort"><?= esc_html(get_field('ort')) ?></td>
                 <td class="dd-wrapper">
-                    <a class="tooltip" onclick="pop_up(this); $(this).find('.icon-down-open-2').toggleClass('up')" data-tooltip="Ganze Adresse anzeigen...">
+                    <a class="tooltip" onclick="pop_up(this); jQuery(this).find('.icon-down-open-2').toggleClass('up')" data-tooltip="Ganze Adresse anzeigen...">
                         <span class="icon-down-open-2"></span>
                     </a>
                     <ul class="dd hidden">

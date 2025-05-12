@@ -206,7 +206,7 @@ unset($cats[0]); // useless first element
 		</div>
 		
 		<div>
-			<button class="filter-button" onclick="$(this).find('span').toggleClass('up'); $('#dev-options').toggle();" style="border-bottom:1px solid black">
+			<button class="filter-button" onclick="jQuery(this).find('span').toggleClass('up'); jQuery('#dev-options').toggle();" style="border-bottom:1px solid black">
 				Projektdokumentation <span class="icon-down-open-2"></span>
 			</button>
 		</div>
@@ -225,7 +225,7 @@ unset($cats[0]); // useless first element
 		</div>
 		
 		<div>
-			<button class="filter-button bordered" onclick="$('#export-modal').show()" style="height:fit-content">EXPORTIEREN</button>
+			<button class="filter-button bordered" onclick="jQuery('#export-modal').show()" style="height:fit-content">EXPORTIEREN</button>
 		</div>
 		
 		<div class="templates" style="display: none">
@@ -347,7 +347,7 @@ unset($cats[0]); // useless first element
 		<div class="row gap-1">
 			<input type="file" id="doc" style="display: none"/>
 			<button id="export" class="filter-button bordered">EXPORTIEREN</button>
-			<button class="filter-button bordered" onclick="$('#export-modal').hide()">ABBRECHEN</button>
+			<button class="filter-button bordered" onclick="jQuery('#export-modal').hide()">ABBRECHEN</button>
 		</div>
 	</div>
 </div>

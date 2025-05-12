@@ -9,9 +9,9 @@ if( $terms ): ?>
 		?>
 		<li style="position:relative">
 			<?php // onClick-Event parameter wird als jQuery-Objekt übergeben ?>
-			<button class="bordered smooth" onclick="javascript:toggle_fachgruppe($(this))"><?php echo esc_html( $term->name ); ?></button>
+			<button class="bordered smooth" onclick="toggle_fachgruppe(jQuery(this))"><?php echo esc_html( $term->name ); ?></button>
 			<div class="popup hidden">
-				<button class="close" onclick="javascript:toggle_fachgruppe($(this).parent().parent().children('button'))">X</button>
+				<button class="close" onclick="toggle_fachgruppe(jQuery(this).parent().parent().children('button'))">X</button>
 				<?php
 					foreach($fachgruppe_mitarbeiter as $mitarbeiter) {
 						echo '<span>';
@@ -33,7 +33,7 @@ if( $terms ): ?>
 <script>
 jQuery(document).ready(function($) {
 	// Ein- und Ausklappen der Fachgruppen
-	function toggle_fachgruppe(theButton) {
+	window.toggle_fachgruppe = function(theButton) {
 		var theLI = $(theButton).parent();
 		var theDiv = theLI.children('div');
 		if (theDiv.hasClass('hidden')) {

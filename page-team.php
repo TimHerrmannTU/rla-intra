@@ -35,7 +35,7 @@
 				</div>
 			</div>
 
-			<button onclick="$('#tags').toggle(); $(this).find('.icon-down-open-2').toggleClass('up');">
+			<button onclick="jQuery('#tags').toggle(); jQuery(this).find('.icon-down-open-2').toggleClass('up');">
 				Mehr Filter<span class="icon-down-open-2"></span>
 			</button>
 

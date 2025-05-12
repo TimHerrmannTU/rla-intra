@@ -8,7 +8,7 @@ $final_cat = get_category_by_slug(get_query_var("category_name"));
 $sub_cats = get_categories( array( 'parent' => $final_cat->cat_ID ) );
 // render all child cats if any are present
 if ($sub_cats) { ?>
-	<a id="sub-cats-trigger" onclick="$('#sub-cats').toggle()"><del></del>...</a>
+	<a id="sub-cats-trigger" onclick="jQuery('#sub-cats').toggle()"><del></del>...</a>
 	<div id="sub-cats" class='breadcrumb row' style='display: none; margin-top: 0.3rem !important; flex-wrap: wrap; gap: 0.2rem 1rem;'>
 		<?php foreach($sub_cats as $sc) {
 			?><a href="<?= $sc->slug ?>"><?= $sc->name; ?></a><?php
